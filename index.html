@@ -13,17 +13,15 @@
     tailwind.config = {
       theme: {
         extend: {
-          fontFamily: {
-            sans: ['Plus Jakarta Sans', 'sans-serif'],
-          },
+          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
           colors: {
             secando: {
-              primary: '#10b981', /* Verde esmeralda bem focado em saúde/nutrição */
+              primary: '#10b981', 
               primaryHover: '#059669',
-              dark: '#064e3b', /* Verde floresta escuro para o contraste premium */
-              slate: '#0f172a', /* Slate profundo */
-              accent: '#f59e0b', /* Dourado/Laranja para alertas e bônus */
-              bgLight: '#f4fbf7'
+              dark: '#064e3b', 
+              slate: '#0f172a',
+              accent: '#f59e0b',
+              light: '#f0fdf4'
             }
           }
         }
@@ -32,196 +30,228 @@
   </script>
 
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #f4fbf7; color: #0f172a; overflow-x: hidden; }
-    
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background: #ffffff; color: #0f172a; }
     .btn-pulse {
       animation: pulse-light 2s infinite;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: all 0.3s ease-in-out;
     }
-    .btn-pulse:hover {
-      transform: scale(1.03);
-      box-shadow: 0 15px 30px rgba(16, 185, 129, 0.4);
-    }
+    .btn-pulse:hover { transform: scale(1.05); }
     @keyframes pulse-light {
       0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-      70% { box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+      70% { box-shadow: 0 0 0 12px rgba(16, 185, 129, 0); }
       100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
     }
+    .shape-divider { position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; transform: rotate(180deg); }
+    .shape-divider svg { position: relative; display: block; width: calc(100% + 1.3px); height: 50px; }
+    .shape-divider .shape-fill { fill: #ffffff; }
   </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
 
-  <section class="bg-gradient-to-b from-secando-dark to-secando-slate text-white pt-16 pb-24 relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/gplay.png')]"></div>
-    
-    <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-      <span class="inline-flex items-center gap-2 bg-secando-primary/20 text-white px-4 py-2 rounded-full font-bold text-xs uppercase tracking-widest mb-6 border border-secando-primary/30">
-        <i data-lucide="sparkles" class="w-4 h-4 text-secando-primary"></i> Nutrição Funcional Integrativa
-      </span>
-      
-      <h1 class="text-3xl md:text-5xl font-extrabold leading-[1.2] tracking-tight mb-6 max-w-3xl mx-auto">
-        Desinche, defina e brilhe com leveza nos próximos <span class="text-secando-primary">30 dias</span>.
+  <header class="relative bg-gradient-to-br from-secando-dark via-secando-slate to-black text-white pt-20 pb-32">
+    <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/leaf.png')]"></div>
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 bg-secando-primary/10 border border-secando-primary/20 px-4 py-2 rounded-full text-secando-primary text-xs font-bold uppercase tracking-widest mb-8">
+        <i data-lucide="zap" class="w-4 h-4"></i> Protocolo Nutricional 2024
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+        Recupere a leveza do seu corpo e <span class="text-secando-primary">seque em 30 dias</span> sem passar fome 🌿
       </h1>
-      
-      <p class="text-base md:text-lg text-emerald-100/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-        Um plano prático criado pela Nutricionista Camila Diniz para reduzir o inchaço abdominal, equilibrar seus hormônios e destravar a queima de gordura natural com alimentos gostosos.
+      <p class="text-lg md:text-xl text-emerald-100/70 mb-10 max-w-3xl mx-auto">
+        O guia definitivo de alimentação funcional para desinflamar, regular seus hormônios e derreter a gordura abdominal de forma prática e saborosa.
       </p>
-
-      <div class="max-w-md mx-auto">
-        <a href="https://pay.hotmart.com/R102467802S?sck=HOTMART_PRODUCT_PAGE&off=09gl83qn&hotfeature=32&bid=1779369332783" target="_blank" class="btn-pulse block w-full bg-secando-primary hover:bg-secando-primaryHover text-white font-extrabold text-lg py-4.5 rounded-xl shadow-lg uppercase tracking-wider text-center transition-colors">
-          Quero Secar em 30 Dias
+      <div class="flex flex-col items-center gap-4">
+        <a href="#oferta" class="btn-pulse bg-secando-primary text-white text-lg md:text-xl font-extrabold px-10 py-5 rounded-2xl shadow-2xl uppercase tracking-tighter">
+          Sim! Quero Começar Agora →
         </a>
-        <p class="text-[11px] text-emerald-200/50 mt-3 flex items-center justify-center gap-2">
-          <i data-lucide="shield-check" class="w-4 h-4 text-secando-primary"></i> Acesso imediato ao material digitalizado.
+        <p class="text-xs text-emerald-200/40 flex items-center gap-2">
+          <i data-lucide="check-circle" class="w-4 h-4"></i> Pagamento único • Acesso imediato
+        </p>
+      </div>
+    </div>
+    <div class="shape-divider">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120;120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+        </svg>
+    </div>
+  </header>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-extrabold text-secando-slate mb-6">
+            Você sente que seu corpo está <span class="text-secando-accent">travado?</span> 😫
+          </h2>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3 text-slate-600">
+              <i data-lucide="frown" class="text-secando-accent w-6 h-6 shrink-0"></i>
+              <span>Acorda cansada e sente que está sempre inchada?</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+              <i data-lucide="lock" class="text-secando-accent w-6 h-6 shrink-0"></i>
+              <span>Sente que seu metabolismo parou de responder às dietas comuns?</span>
+            </li>
+            <li class="flex items-start gap-3 text-slate-600">
+              <i data-lucide="alert-circle" class="text-secando-accent w-6 h-6 shrink-0"></i>
+              <span>Sofre com fissura por doces e picos de fome à noite?</span>
+            </li>
+          </ul>
+          <p class="mt-8 text-slate-500 italic">
+            "O problema não é a sua genética, é a <strong>inflamação silenciosa</strong> que impede seu corpo de usar a gordura como combustível."
+          </p>
+        </div>
+        <div class="bg-secando-light p-8 rounded-3xl border-2 border-emerald-100">
+          <h3 class="text-xl font-bold text-secando-dark mb-4">A Ciência da Nutrição Funcional 🔬</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">
+            Como <strong>Nutricionista e Farmacêutica</strong>, eu não olho apenas para as calorias. Eu olho para como os alimentos conversam com seus hormônios.
+          </p>
+          <p class="text-slate-600 text-sm leading-relaxed">
+            Neste plano de 30 dias, nós vamos "limpar" os receptores das suas células, reduzindo o cortisol e a insulina, forçando o seu corpo a desinchar naturalmente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-secando-slate text-white">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-extrabold mb-8">A Solução Prática: <span class="text-secando-primary">E-book Plano Para Secar</span> 📖</h2>
+      <p class="text-emerald-100/60 mb-12">Esqueça fórmulas mágicas. Tenha em mãos um passo a passo estruturado para a sua rotina real.</p>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+          <i data-lucide="utensils-cross" class="w-8 h-8 text-secando-primary mx-auto mb-4"></i>
+          <p class="text-xs font-bold">Cardápio 30 Dias</p>
+        </div>
+        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+          <i data-lucide="shopping-basket" class="w-8 h-8 text-secando-primary mx-auto mb-4"></i>
+          <p class="text-xs font-bold">Lista de Compras</p>
+        </div>
+        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+          <i data-lucide="flame" class="w-8 h-8 text-secando-primary mx-auto mb-4"></i>
+          <p class="text-xs font-bold">Guia de Receitas</p>
+        </div>
+        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+          <i data-lucide="brain-circuit" class="w-8 h-8 text-secando-primary mx-auto mb-4"></i>
+          <p class="text-xs font-bold">Hábitos Diários</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-extrabold text-secando-slate">Isso é para você, mesmo que... 🤔</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-14 h-14 bg-emerald-50 text-secando-primary rounded-full flex items-center justify-center mx-auto mb-6"><i data-lucide="clock" class="w-7 h-7"></i></div>
+          <h4 class="font-bold mb-2">Não tenha tempo</h4>
+          <p class="text-xs text-slate-500">As receitas levam menos de 15 minutos e a lista de compras foca na praticidade do mercado.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-emerald-50 text-secando-primary rounded-full flex items-center justify-center mx-auto mb-6"><i data-lucide="banknote" class="w-7 h-7"></i></div>
+          <h4 class="font-bold mb-2">Ache que é caro</h4>
+          <p class="text-xs text-slate-500">O plano usa comida de verdade: arroz, feijão, ovos, frutas e vegetais acessíveis em qualquer feira.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-emerald-50 text-secando-primary rounded-full flex items-center justify-center mx-auto mb-6"><i data-lucide="heart-off" class="w-7 h-7"></i></div>
+          <h4 class="font-bold mb-2">Tenha tentado tudo</h4>
+          <p class="text-xs text-slate-500">Aqui não há restrição severa. Trabalhamos a desinflamação, algo que dietas de internet ignoram.</p>
+        </div>
+      </div>
+      <div class="mt-16 text-center">
+        <a href="#oferta" class="text-secando-primary font-bold underline decoration-2 underline-offset-4 hover:text-secando-primaryHover">
+            Quero garantir meu acesso agora →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-secando-light">
+    <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
+      <div class="md:col-span-5 flex justify-center">
+        <div class="relative">
+            <div class="absolute -inset-4 bg-secando-primary/20 rounded-full blur-xl"></div>
+            <img src="camila.webp" alt="Camila Diniz" class="relative w-72 h-72 rounded-full object-cover border-8 border-white shadow-2xl" onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1470&auto=format&fit=crop';">
+        </div>
+      </div>
+      <div class="md:col-span-7">
+        <h2 class="text-3xl font-extrabold text-secando-slate mb-4">Camila Diniz <span class="text-sm font-normal text-slate-400">CRN9-33882</span></h2>
+        <p class="text-secando-primary font-bold mb-6">Nutricionista & Farmacêutica 👩‍⚕️</p>
+        <p class="text-slate-600 leading-relaxed mb-4">
+          Com mais de anos de prática clínica, entendi que o segredo de um corpo definido e saudável não está em "comer menos", mas em **limpar o terreno biológico**.
+        </p>
+        <p class="text-slate-600 leading-relaxed">
+          Criei este Plano de 30 dias para condensar meu conhecimento de consultório em um guia acessível que qualquer pessoa pode seguir para transformar sua saúde e autoestima.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="py-12 bg-white border-b border-emerald-50">
-    <div class="max-w-5xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-      <div class="p-4 flex flex-col items-center">
-        <div class="w-10 h-10 rounded-full bg-emerald-50 text-secando-primary flex items-center justify-center mb-3"><i data-lucide="droplet-off" class="w-5 h-5"></i></div>
-        <h3 class="font-bold text-secando-slate">Adeus Inchaço</h3>
-        <p class="text-xs text-slate-500 mt-1">Estratégias funcionais para eliminar a retenção logo na primeira semana.</p>
-      </div>
-      <div class="p-4 flex flex-col items-center border-y md:border-y-0 md:border-x border-slate-100">
-        <div class="w-10 h-10 rounded-full bg-emerald-50 text-secando-primary flex items-center justify-center mb-3"><i data-lucide="activity" class="w-5 h-5"></i></div>
-        <h3 class="font-bold text-secando-slate">Equilíbrio Hormonal</h3>
-        <p class="text-xs text-slate-500 mt-1">Regulação natural do metabolismo e comportamento alimentar.</p>
-      </div>
-      <div class="p-4 flex flex-col items-center">
-        <div class="w-10 h-10 rounded-full bg-emerald-50 text-secando-primary flex items-center justify-center mb-3"><i data-lucide="smile" class="w-5 h-5"></i></div>
-        <h3 class="font-bold text-secando-slate">Leveza Real</h3>
-        <p class="text-xs text-slate-500 mt-1">Sem passar fome, comendo de forma saborosa, prática e barata.</p>
-      </div>
-    </div>
-  </section>
+  <section id="oferta" class="py-24 bg-white relative">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-extrabold mb-4 uppercase tracking-tighter">Sua transformação custa menos que um <span class="text-secando-accent">lanche</span> 🍔</h2>
+      <p class="text-slate-500 mb-12">Acesso vitalício ao material completo.</p>
 
-  <section class="py-20 bg-emerald-50/50">
-    <div class="max-w-4xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <span class="text-xs font-bold text-secando-primary uppercase tracking-wider">O que você vai receber</span>
-        <h2 class="text-3xl font-extrabold text-secando-slate mt-2 tracking-tight">Tudo o que você precisa para mudar o corpo em 4 semanas</h2>
-      </div>
-
-      <div class="grid sm:grid-cols-2 gap-6">
-        <div class="bg-white p-6 rounded-xl border border-emerald-100 shadow-sm flex gap-4">
-          <div class="text-secando-primary"><i data-lucide="calendar" class="w-6 h-6"></i></div>
-          <div>
-            <h3 class="font-bold text-base text-secando-slate mb-1">Cardápio Pronto de 30 Dias</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">Organizado refeição por refeição, pensado estrategicamente para nutrir e desinflamar o corpo sem complicações.</p>
-          </div>
+      <div class="bg-white rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-2 border-secando-primary overflow-hidden max-w-sm mx-auto transform hover:scale-105 transition-all">
+        <div class="bg-secando-primary text-white py-4 text-sm font-bold tracking-widest uppercase">
+          🔥 OFERTA POR TEMPO LIMITADO
         </div>
-
-        <div class="bg-white p-6 rounded-xl border border-emerald-100 shadow-sm flex gap-4">
-          <div class="text-secando-primary"><i data-lucide="shopping-cart" class="w-6 h-6"></i></div>
-          <div>
-            <h3 class="font-bold text-base text-secando-slate mb-1">Lista de Compras Prática</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">Vá ao supermercado sabendo exatamente o que comprar. Economize tempo e evite gastar dinheiro com o que não precisa.</p>
-          </div>
-        </div>
-
-        <div class="bg-white p-6 rounded-xl border border-emerald-100 shadow-sm flex gap-4">
-          <div class="text-secando-primary"><i data-lucide="chef-hat" class="w-6 h-6"></i></div>
-          <div>
-            <h3 class="font-bold text-base text-secando-slate mb-1">Guia de Receitas Funcionais</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">Opções fáceis, deliciosas e rápidas de preparar que provam que comer bem e emagrecer pode ser prazeroso.</p>
-          </div>
-        </div>
-
-        <div class="bg-white p-6 rounded-xl border border-emerald-100 shadow-sm flex gap-4">
-          <div class="text-secando-primary"><i data-lucide="book-open" class="w-6 h-6"></i></div>
-          <div>
-            <h3 class="font-bold text-base text-secando-slate mb-1">Guia Diário de Hábitos</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">O passo a passo de comportamento e rotina para alinhar seu metabolismo e manter os resultados após os 30 dias.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
-      <div class="md:col-span-5 flex justify-center items-center">
-        <div class="relative w-64 h-64">
-          <div class="absolute -inset-2 bg-emerald-100 rounded-full -z-10 transform scale-95"></div>
-          <img src="camila.webp" alt="Camila Diniz" class="rounded-full w-64 h-64 object-cover shadow-lg border-4 border-white block"
-               onerror="this.src='https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1470&auto=format&fit=crop';">
-        </div>
-      </div>
-      <div class="md:col-span-7">
-        <span class="text-xs font-bold text-slate-400 block mb-1">CRN9-33882</span>
-        <h2 class="text-3xl font-extrabold text-secando-slate mb-4">Camila Diniz</h2>
-        <p class="text-sm font-semibold text-secando-primary mb-3">Nutricionista & Farmacêutica especialista em Nutrição Funcional Integrativa</p>
-        <div class="space-y-4 text-xs text-slate-600 leading-relaxed font-medium">
-          <p>Acredito que o emagrecimento definitivo e a definição corporal acontecem quando respeitamos o funcionamento do nosso metabolismo e comportamento.</p>
-          <p>Unindo meus conhecimentos em nutrição e farmácia, estruturei este plano focado em <strong>limpar o organismo de forma funcional</strong>, regulando hormônios que controlam o apetite e eliminando aquele inchaço abdominal que tanto incomoda, devolvendo sua autoconfiança sem restrições absurdas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-gradient-to-b from-emerald-50 to-white border-t border-emerald-100" id="oferta">
-    <div class="max-w-3xl mx-auto px-6 text-center">
-      <div class="mb-10">
-        <h2 class="text-3xl font-extrabold text-secando-slate mb-3">Inicie Sua Transformação Hoje</h2>
-        <p class="text-slate-500 text-sm max-w-md mx-auto">O preço de um lanche no final de semana para ter acesso ao protocolo completo focado na sua saúde.</p>
-      </div>
-
-      <div class="bg-white rounded-2xl shadow-xl border-2 border-secando-primary overflow-hidden max-w-sm mx-auto">
-        <div class="bg-secando-dark text-white px-6 py-3 font-bold text-xs tracking-wider uppercase flex items-center justify-center gap-2">
-          <i data-lucide="check-circle" class="w-4 h-4 text-secando-primary"></i> OFERTA DE ATIVAÇÃO IMEDIATA
-        </div>
-        
-        <div class="p-8">
-          <span class="text-[10px] font-extrabold text-slate-400 tracking-wider block uppercase mb-1">Você vai receber o pacote completo:</span>
-          <h3 class="text-xl font-bold text-secando-slate mb-6">PLANO PARA SECAR EM 30 DIAS</h3>
-          
-          <ul class="space-y-3 text-left max-w-xs mx-auto mb-8 text-xs text-slate-600 font-medium">
-            <li class="flex items-center gap-2"><i data-lucide="check" class="text-secando-primary w-4 h-4 shrink-0"></i> <span>Cardápio Pronto e Nutritivo</span></li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="text-secando-primary w-4 h-4 shrink-0"></i> <span>Lista de Compras Inteligente</span></li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="text-secando-primary w-4 h-4 shrink-0"></i> <span>Guia Completo de Receitas Rápidas</span></li>
-            <li class="flex items-center gap-2"><i data-lucide="check" class="text-secando-primary w-4 h-4 shrink-0"></i> <span>Cronograma Diário de Hábitos</span></li>
+        <div class="p-10">
+          <h3 class="text-2xl font-black text-secando-slate mb-6">PLANO PARA SECAR EM 30 DIAS</h3>
+          <ul class="text-left space-y-4 mb-10 text-sm text-slate-600 font-medium">
+            <li class="flex gap-2 items-center"><i data-lucide="check" class="text-secando-primary"></i> Cardápio de 4 Semanas</li>
+            <li class="flex gap-2 items-center"><i data-lucide="check" class="text-secando-primary"></i> Lista de Compras Inteligente</li>
+            <li class="flex gap-2 items-center"><i data-lucide="check" class="text-secando-primary"></i> Guia de Receitas Funcionais</li>
+            <li class="flex gap-2 items-center"><i data-lucide="check" class="text-secando-primary"></i> Sugestão de Suplementação Segura</li>
           </ul>
-
-          <div class="border-t border-slate-100 pt-5 mb-6">
-            <span class="text-slate-400 text-xs block line-through">De R$ 97,00</span>
-            <span class="text-slate-400 text-xs block mt-1">Por apenas</span>
-            <div class="text-4xl font-black text-secando-dark tracking-tight my-1">R$ 47,00</div>
-            <span class="text-[11px] font-bold text-secando-primary block">Pagamento único • Sem mensalidades</span>
+          <div class="mb-10">
+            <span class="text-slate-400 line-through block">De R$ 197,00</span>
+            <span class="text-slate-500 block">Por apenas</span>
+            <div class="text-5xl font-black text-secando-dark my-2">R$ 47,00</div>
+            <span class="text-xs font-bold text-secando-primary">Ou em até 5x de R$ 10,14</span>
           </div>
-
-          <a href="https://pay.hotmart.com/R102467802S?sck=HOTMART_PRODUCT_PAGE&off=09gl83qn&hotfeature=32&bid=1779369332783" target="_blank" class="btn-pulse block w-full bg-secando-primary hover:bg-secando-primaryHover text-white font-extrabold py-3.5 rounded-xl shadow-md uppercase tracking-wider text-xs mb-3 transition-colors">
-            Adquirir Plano Agora
+          <a href="https://pay.hotmart.com/R102467802S?sck=HOTMART_PRODUCT_PAGE&off=09gl83qn&hotfeature=32&bid=1779369332783" target="_blank" class="btn-pulse block w-full bg-secando-primary text-white py-5 rounded-2xl font-extrabold text-lg uppercase">
+            Quero Começar Agora!
           </a>
-          
-          <div class="flex items-center justify-center gap-3 text-[10px] text-slate-400 font-medium">
-            <span class="flex items-center gap-1"><i data-lucide="shield" class="w-3.5 h-3.5 text-secando-primary"></i> Seguro</span>
-            <span class="flex items-center gap-1"><i data-lucide="clock" class="w-3.5 h-3.5 text-secando-primary"></i> 7 Dias de Garantia</span>
+          <div class="mt-6 flex justify-center gap-4 text-[10px] text-slate-400 uppercase font-bold">
+            <span class="flex items-center gap-1"><i data-lucide="lock" class="w-3 h-3"></i> Seguro</span>
+            <span class="flex items-center gap-1"><i data-lucide="shield-check" class="w-3 h-3"></i> Garantido</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="py-20 bg-white border-t border-emerald-50">
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-3xl mx-auto px-6 flex flex-col md:flex-row items-center gap-8 border-2 border-dashed border-slate-200 p-8 rounded-3xl">
+        <div class="w-24 h-24 shrink-0 bg-white shadow-xl rounded-full flex items-center justify-center text-secando-accent">
+            <i data-lucide="award" class="w-12 h-12"></i>
+        </div>
+        <div>
+            <h3 class="text-xl font-extrabold text-secando-slate mb-2">Risco Zero: Garantia de 7 Dias 🛡️</h3>
+            <p class="text-sm text-slate-500 leading-relaxed">
+                Eu tenho tanta confiança no método que se em 7 dias você não amar as receitas ou sentir que o plano não é para você, basta um clique para receber 100% do seu dinheiro de volta. Sem perguntas, sem burocracia.
+            </p>
+        </div>
+    </div>
+  </section>
+
+  <section class="py-24 bg-white">
     <div class="max-w-3xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <span class="text-xs font-bold text-secando-primary uppercase tracking-wider">Ficou com alguma dúvida?</span>
-        <h2 class="text-3xl font-extrabold text-secando-slate mt-2">Dúvidas Frequentes</h2>
-      </div>
-
-      <div class="space-y-4">
-        <div class="bg-emerald-50/40 p-5 rounded-xl border border-emerald-100/50">
-          <h3 class="font-bold text-sm text-secando-dark mb-2">Para quem é recomendado o Plano para Secar em 30 Dias?</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">É perfeito para homens e mulheres que se sentem constantemente pesados, com inchaço abdominal crônico, metabolismo lento e que buscam uma estratégia nutricional rápida, segura e baseada em comida de verdade para recuperar a leveza e desinflamar o organismo.</p>
+      <h2 class="text-3xl font-extrabold text-center mb-16">Perguntas Frequentes 🙋‍♀️</h2>
+      <div class="space-y-6">
+        <div class="border-b border-slate-100 pb-4">
+          <h4 class="font-bold text-slate-700 flex justify-between items-center cursor-pointer">Como recebo o acesso? <i data-lucide="plus" class="w-4 h-4 text-secando-primary"></i></h4>
+          <p class="text-xs text-slate-500 mt-2">Assim que a Hotmart aprovar o pagamento, você recebe os dados no seu e-mail na hora.</p>
         </div>
-
-        <div class="bg-emerald-50/40 p-5 rounded-xl border border-emerald-100/50">
-          <h3 class="font-bold text-sm text-secando-dark mb-2">Como funciona a entrega do material?</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">A entrega é 100% digital e automática. Assim que o pagamento for confirmado pela Hotmart, o link com o acesso ao cardápio, guias, receitas e listas chegará no e-mail que você cadastrou.</p>
+        <div class="border-b border-slate-100 pb-4">
+            <h4 class="font-bold text-slate-700 flex justify-between items-center cursor-pointer">Preciso de suplementos caros? <i data-lucide="plus" class="w-4 h-4 text-secando-primary"></i></h4>
+            <p class="text-xs text-slate-500 mt-2">Não! O plano foca em comida de verdade. As sugestões de suplementos são opcionais para potencializar resultados.</p>
         </div>
-
-        <div class="bg-emerald-50/
+        <div class="border-b border-slate-100 pb-4">
+            <h4 class="font-bold text-slate-700 flex justify-between items-center cursor-pointer">Serve para quem tem hipotireoidismo? <i data-lucide="plus" class="w-4 h-4 text-secando-primary"></i></h4>
+            <p class="text-xs text-slate-500 mt-2">Sim! A base do plano é anti-inflamat
